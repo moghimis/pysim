@@ -1,0 +1,265 @@
+\documentclass[final,authoryear]{svjour3}
+%\documentclass[twocolumn,final,authoryear]{svjour3}
+\smartqed
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{lineno}
+\journalname{ghddfgdfgd}
+\usepackage{etoolbox} % to use for if statement
+
+%\linenumbers
+%\linespread{2}
+\setcounter{tocdepth}{4}
+\setlength{\textwidth}{170mm}
+\setlength{\textheight}{230mm}
+
+
+\begin{document}
+
+%\tableofcontents
+%\newpage
+
+\title{Pysim a Python package for bathymetry estimation using Enkf method.}
+
+\titlerunning{Pysim v0.1}
+
+\author{Saeed Moghimi} %, Jim Thomson}
+
+\institute{Saeed Moghimi \at College of Earth, Ocean, and Atmospheric Sciences
+Oregon State University 104 CEOAS Administration Building Corvallis, OR 
+97331-5503 \\  \email{moghimi@coas.oregonstate.edu}
+}
+
+%\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+\maketitle
+%\large
+
+    \section{Introduction}
+    My primary research interest is the development of state-of-the-art numerical
+    tools using Computational Fluid Dynamics (CFD) techniques and applying these
+    tools to flow hydrodynamics, environmental fluid dynamics and transport
+    processes in coastal and shelf seas. The purpose of this research is to gain
+    insight into the physics of such phenomena and accordingly make practical 
+    and accurate predictions of these environments. I am also interested in
+    experimental and field study involving phenomena shaping hydrodynamics of coastal systems.       
+    In this statement, I will first present my past and current research, followed
+    by my future research plans and philosophy. Finally, I will conclude with a
+    summarization of my research statement.     
+    
+    \section{Past Research}
+    Numerical modeling is playing an increasingly important role in coastal and
+    ocean science. To date however; developing, validating and
+    ultimately employing numerical methods to simulate hydrodynamics of complicated
+    dynamical environments, such as shallow coastal waters and estuaries, remain 
+    challenging issues. My research interest during the last ten years contributes
+    to this endeavor by focusing on the development of numerical codes, and
+    by verifying and applying developed models to challenging Lab and real world
+    cases.
+    
+    The main focus of my PhD research (2000$-$2005) was to develop a comprehensive
+    dynamically coupled modeling system, including a three-dimensional hydrodynamic 
+    model and a third generation surface wave model, in order to investigate
+    bilateral effects of storm surge and surface waves in shallow coastal regions. I further developed
+    this modeling system to include the effect of wave-current interaction inside
+    the bottom boundary layer (BBL) using different wave-current BBL definitions.      
+    
+    I applied this modeling system in a highly variable tidal environment in the
+    Wadden Sea area during my visit to the Helmholtz Zentrum Geesthacht research
+    center in 2004. I further investigated effects of locally generated wind
+    waves and incoming swells from the North Sea on the distribution of friction
+    velocity, especially at the entrance of the inlet, as well as in extremely
+    shallow parts inside the tidal flat. In order to validate the modeling system, I
+    compared both wave and hydrodynamic modeling results with available measurements
+    from deployed tower and number of wave buoys, and with ADCP observations in the
+    region. The scientific achievements of my PhD research was published as a
+    full length research paper in Ocean Dynamics and was presented in several
+    scientific conferences.
+    
+    After graduation in 2005, I was appointed as an assistant professor in the Civil
+    Engineering Department at the Arak University, Arak, Iran, where I initiated
+    other leading-edge research studies. I initiated the first meteo-ocean prediction
+    system for the Iranian Office of Meteorology as a national project. During this
+    project I converted my developed modeling system to an efficient parallel
+    computing program, including all necessary pre- and post-processing and
+    verification packages. I further employed a variety of numerical modeling
+    frameworks in different research projects to investigate thermal pollution and
+    contaminate transport in coastal and lake environments.         
+    
+    After I was awarded the Alexander von Humboldt fellowship in 2009, I 
+    continued this line of research by joining the Coastal Ocean and Physical
+    Process Studies Group at the Department of Physical Oceanography of the Leibniz
+    Institute for Baltic Sea Research. This group has and continues to develop 
+    leading edge open source Ocean models, including The General Ocean Turbulence
+     Model (GOTM), which is one of the most well known ocean turbulence
+    models, and the General Estuarine Transport Model (GETM), a 3D coastal ocean
+    model.
+    
+    During my fellowship I concentrated on and achieved three crucial goals: (1)
+    develop and couple a spectral wind wave model to GETM in a flexible manner, with
+    regard to the possibility for massive MPI runs on supercomputers, (2)
+    implement the most recent wave-current interaction physics with a wide range of
+    oceanic applications, and (3) study the effects of injecting wave
+    dissipated energy on local mixing properties of the ocean water column. 
+    I have further implemented mechanisems regarding the effects of surface waves in
+    deep and shallow parts of the ocean contributing to momentum and energy exchange 
+    between atmosphere and ocean. One of the main concerns of this research was
+    implementation of the Vortex Force (VF) concept as the main driving force, 
+    together with the Generalized Lagrangian Method (GLM).       
+     
+    As a research fellow, I used state-of-the-art parallel programming tools to
+    create a coupled wave and circulation modeling framework, which includes the
+    latest published physical interaction mechanisms (e.g. turbulence effects,
+    surface rollers, and bottom boundary layer). The coupled system includes the
+    three-dimensional coastal circulation GETM and the third generation wind wave
+    model SWAN (Simulating Wave Near-shore). I have coupled these models by
+    the state-of-the-art model coupling toolkit (MCT), which is the coupler engine
+    of the Community Climate System Model (CCSM). This model provides high operational 
+    flexibility combining several MPI models to operate simultaneously with
+    different numbers of processes by different domain decompositions.           
+    I presented the scientific achievements of my fellowship in several scientific
+    meetings and in a full length research paper published in the Ocean Modelling
+    Journal.
+    
+    \section{Current Research}
+    Since June 2012, I have joined the College of Earth, Ocean, and Atmospheric
+    Sciences, Oregon State University as a Research Associate, collaborating in
+    a multi-institutional ONR project entitled, ``Remote sensing and
+    data-assimilative modeling in the littorals (DARLA)''. This collaborative project has been initiated to combine
+    pairs of state-of-the-art remote sensing and \textit{in situ} measurements
+    with advanced data assimilation (DA) modeling in order to evaluate and improve
+    remote sensing retrieval algorithms for environmental parameters, and more
+    importantly, infer bathymetry for a range of littoral environments.
+    
+    In fact, estimation of bathymetry was a primary motivation for the use of data
+    assimilation models in the littoral zone, which includes open beaches, river
+    mouths, and tidal inlets. While significant progress has been made in
+    bathymetry estimation in the surf zone, application to river mouths and tidal
+    inlets is still a challenging task, which is my role in this project.
+    I have developed an iterative assimilation framework which assimilates surface
+    velocity and wave information retrieved from remote sensing instruments 
+    (e.g. SAR and X-band radars), and it proved to be a robust method
+    for accurate estimation of an evolving bathymetry in a tidal inlet.
+    
+    I have also studied energy and momentum transfer between
+    surface waves and ocean. I am examining turbulent dissipation rate
+    measurements of the very thin ocean upper layer, which is gathered by
+    floating devices.
+    I compare these data with a one-dimensional vertical two-equation turbulence
+    model forced by surface flux of turbulent kinetic energy (TKE) calculated from wave model
+    dissipation sink terms. I am seeking the best turbulence model
+    parametrization describing the data, as well as an appropriate wave dissipation
+    method in wave model providing correct flux of energy from waves to the ocean.
+    We will use this information in our full 3D coupled wave and ocean system
+    in real application to improve the quality of simulations. Using our 3D coupled
+    model, I am examining at rip-current, surf-zone eddies and near-shore river
+    plumes dynamics.
+    
+    Thus far, I am very satisfied with the progress of my current research and the
+    achievements attained at, the College of Earth, Ocean, and Atmospheric Sciences,
+    and I believe there will be continued research achievements in the immediate
+    future.
+    
+    \section{Future Research}
+    I will pursue my research in the field of near-shore and coastal ocean
+    hydrodynamical processes. Within the first two years, my short-term plan is to
+    continue to work on existing interdisciplinary complex problems using
+    computational models and field studies such as:
+    \begin{itemize}
+         \item \textbf{Application of data assimilation and data-driven machine learning methods:} I will          investigate the use of data assimilation and data-driven machine learning methods to infer different environmental variables (e.g. bathymetry, eddy structure, stratification, bottom roughness, wave dissipation) from their        signatures in new remotely sensed data types (e.g. Airborne SAR and SWOT).
+
+        \item \textbf{Wave-Current interaction:} I will investigate different
+        aspects of the wave-current interaction and their role in near-shore and
+        open ocean hydrodynamics and define these ranges of applicability and
+        accuracy of the methods. The goal is to gain a deeper understanding of the fundamental
+        physics of the signatures of different waves-current interaction mechanisms
+        and their indicator variables in the environment.
+%        \item \textbf{Water column mixing properties}: I will study the effects
+        % of dissipated energy from surface waves inside surface and bottom boundary
+%        layers on water column mixing properties. Also I will concentrate on
+%        improving the dissipation sink terms in wave models to have a
+        % consistent flux of energy among atmosphere, surface waves and ocean.
+        
+        \item  \textbf{Investigate climate change and ongoing transformation
+        processes}: I will use the coupled atmosphere-wave-ocean modeling
+        framework to study the development of adaptation strategies for
+        coastlines and coastal oceans to minimize the economic, social and
+        environmental harms.
+        
+        \item \textbf{Pollution, sediment transport and mixing}: I will study
+        the effects of dissipated energy from surface waves inside surface and bottom
+        boundary layers on water column mixing properties. Also I will
+        concentrate on
+        improving the advection and diffusion of sediment and pollution in water
+        bodies considering effects of surface waves in eddy diffusivity and mixing
+        parametrization and its application in coupled physical$-$biological
+        settings for lakes, estuaries and coastal waters.
+       \end{itemize}
+    
+    The research on interdisciplinary complex problems, however, requires the
+    collaboration between researchers in several disciplines with a variety of
+    tools. Simulations and advanced computational tools can play an important role
+    in this collaboration as they are generally faster and have higher
+    spatial/temporal resolution than experiments. I believe, however, that the
+    modeling results are required to be supported and validated by the
+    experimental findings and field observations.        
+    
+    Thus, with a minimum five-year span, my long term plan is to continue enhancing 
+    my state-of-the-art numerical tools to improve their predictive capabilities and
+    accuracy in simulating futuristic and developing phenomena. To be able to carry out
+    high-resolution simulations of complex coupled models, massive computational
+    resources are required. Likewise, further development of my computational
+    tools research requires an additional university investment of a smaller, parallel
+    cluster, for use by my research group, with approximately 300 additional cores
+    at an estimated cost of about $ \$$150K (adjusted per funding availability).
+    Ideally, this is in addition to the computational resources currently available
+    at the department.         
+        
+    \section{Research Philosophy}
+    My research method is to mathematically challenge and resolve near-shore and
+    coastal ocean hydrodynamics, transport and dispersion of tracers in shallow
+    coastal waters, and to observe and model turbulence in the surfzone and
+    near-shore addressing related problems. Therefore, by analyzing observational
+    data and measurements I can improve the numerical tools for more accurate,
+    physics-based predictions.
+    
+    I believe in utilizing more assistance from students in the investigative work
+    of research, and therefore I am highly interested in building and leading a team
+    of graduate students to:    
+    \begin{itemize}
+        \item Develop state-of-the-art computational tools that can simulate complex
+        near-shore hydrodynamics phenomena accurately and efficiently on parallel
+        computing clusters.
+        \item Apply these tools in interdisciplinary research about near-shore and
+        costal ocean hydrodynamics and environmental fluid mechanics to enable
+        discovery and advancing knowledge about these important problems.
+        \item Perform laboratory/field studies to gain valuable data and insights about
+        the wave-current interaction, water column turbulence and mixing properties,
+        transport and dispersion of tracers and other missing physics in near-shore
+        and coastal seas.
+        \item And finally as a major goal, I plan to set up my own research group and
+        laboratory as an active part of our department to be a reference laboratory in
+        the field of near-shore and coastal ocean hydrodynamics. 
+    \end{itemize}
+    
+    \section{Conclusion}
+    I will continue to use state-of-the-art parallel programing tools to develop
+    highly scalable computational tools for simulating complex interdisciplinary
+     near-shore and coastal ocean hydrodynamics that can lead to discoveries
+    and advance knowledge of such phenomena. I will also use experimental and
+    oceanographic research facilities to perform experimental and
+    observational studies and to obtain physical insight and valuable data to
+    validate my simulation results. This approach allows me to collaborate within and across
+    different disciplines within the university. I believe that this collaborative
+    cooperation of disciplines can lead to profound discoveries which may assist in 
+    materializing my vision of establishing a respected reference laboratory in
+    near-shore and coastal ocean research with national and international acclaim. 
+    Finally, I endeavor to use my research to enhance my teaching methods.
+    
+    %\bibliographystyle{spbasic}
+    %\bibliography{References_all}
+
+\end{document}

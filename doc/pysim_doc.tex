@@ -1,0 +1,82 @@
+\documentclass[final,authoryear]{svjour3}
+%\documentclass[twocolumn,final,authoryear]{svjour3}
+\smartqed
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{lineno}
+\journalname{ghddfgdfgd}
+
+%\linenumbers
+%\linespread{2}
+\setcounter{tocdepth}{4}
+\setlength{\textwidth}{170mm}
+\setlength{\textheight}{230mm}
+
+
+\begin{document}
+
+%\tableofcontents
+%\newpage
+
+\title{Pysim: A Python package for bathymetry estimation using Enkf method.}
+
+\titlerunning{Pysim v0.1}
+
+\author{Saeed Moghimi} %, Jim Thomson}
+
+\institute{Saeed Moghimi \at  \email{moghimis@gmail.com}
+}
+%\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+\maketitle
+%\large
+
+\section{Introduction}
+For detail information on scientific background and idea about case study done with this package please see \cite{moghimi2015assim_syn}. 
+
+\section{How to setup}
+Here is the general steps you need to take in order to make the package working:
+\begin{enumerate}
+  \item Set variables in  \verb base_info.py   file.
+  \item Set directories carefully  e.g. \verb base_dir,inp_dir,scr_dir. The \verb base_dir  is the main output directory.
+\end{enumerate}
+
+\section{Structure of input directory}
+The \verb inp   folder has diffrent folders including:
+\begin{itemize}
+  \item  \verb const  : for all input information for running numerical models. Like ROMS and SWAN input files, boundary conditions, compiled excutables, bathymetry information and so on.
+  \item \verb obs  : for current velocity observation. \verb sar   refers to SAR actuale data and \verb syn  refers to synthetic data for a twin test.
+  \item \verb obs_swift  : for current velocity observation from a drifter.
+  \item  \verb obs_wave  : for wave observation from a x-band radar or synthetic source.
+\end{itemize}
+
+\section{Structure of output directory}
+The results will save in \verb base_dir which is defined in  \verb base_info.py . The software always copy the whole \verb inp  folder in order to keep each case reproduceable later on. 
+
+For each iteration one folder as \verb run_100X will be created. each iteration folder includes several folders as:
+\begin{enumerate}
+  \item \verb 00_prior       : prior  bathymetry of current iteration
+  \item \verb 01_bat_inp     : initial bumps ensembmle members  
+  \item \verb 02_bat_adj     : final bathymetry ensebles
+  \item \verb 03_mem_inp     : ROMS results for each ensmble member 
+  \item \verb 04_mem_adj     : Adjusted ROMS ready to assimilate based on the time of assimilation
+  \item \verb 04_swf_adj     : Drifter extracted data from ROMS runs ready for assimilation  
+  \item \verb 04_wav_adj     : SWAN folder including netcdf post-processed ready for assimilation 
+  \item \verb 05_assimilate  : Assimilation results directory 
+  \item \verb 06_mat2prior   : Prepare posterior in netcdf fomat ready for next iterartion as new prior
+  \item \verb 07_post        : folder to keep post-processing of results (plots)  
+  \item \verb 08_forward     : forward ROMS run over assimilated bathymetry
+  \item \verb 08_forward_swan  : forward SWAN run over assimilated bathymetry
+  \item \verb scr            : a copy of scripts for this iteration as refrence.
+\end{enumerate}
+
+
+
+
+\bibliographystyle{spbasic}
+\bibliography{References_all}
+
+\end{document}

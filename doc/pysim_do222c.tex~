@@ -1,0 +1,155 @@
+% Choose the journal abbreviation for the journal you are
+% submitting to:
+
+% jgrga JOURNAL OF GEOPHYSICAL RESEARCH
+% gbc   GLOBAL BIOCHEMICAL CYCLES
+% grl   GEOPHYSICAL RESEARCH LETTERS
+% pal   PALEOCEANOGRAPHY
+% ras   RADIO SCIENCE
+% rog   REVIEWS OF GEOPHYSICS
+% tec   TECTONICS
+% wrr   WATER RESOURCES RESEARCH
+% gc    GEOCHEMISTRY, GEOPHYSICS, GEOSYSTEMS
+
+% (If you are submitting to a journal other than jgrga,
+% substitute the initials of the journal for "jgrga" below)
+%\documentclass[draft,jgrga]{AGUTeX}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% optional article formats author might want to use
+
+% To produce a galley version:
+% \documentclass[galley,jgrga]{AGUTeX}
+
+% To produce a two columned version:
+% \documentclass[jgrga]{AGUTeX}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%oceandynamics
+\documentclass[final]{svjour3}
+%\usepackage{newclude}
+%\documentclass[twocolumn,final]{svjour3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{newclude}
+%
+%use with \include*{filename}      % will not add page breaks
+\smartqed
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{subfig}
+\usepackage{lineno}
+\usepackage{multirow}
+%\journalname{Ocean Dynamics}
+\linenumbers
+\linespread{2}
+\textwidth 16cm
+\textheight 23cm
+\newcommand{\comments}[1]{}
+
+
+\begin{document}
+
+\title{ 
+Data Assimilation for bathymetric inversion in a highly variable tidal
+environment.
+}
+
+\author{
+S M$^{1}$
+}
+
+\institute{\at OSU.
+}
+
+\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+
+\maketitle
+\begin{abstract}
+{
+In this research state-of-the-art 
+}
+
+\keywords{wind waves \and SWAN
+}
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Introduction
+%\include{./files/1-introduction/intro}
+
+\section{Introduction}
+
+In assessning numerical modeles againts observations one needs to consider at
+least two source of errors. the first group is the one assosciated with
+bathymetry, boundary conditions and forcings and the next is the
+errors arises because of shorcomings in description of physical processes in
+terms of governing equations and internal definition in models which will be
+referd as input error and  process error hereafter.
+
+
+
+
+\section{Methodology}
+
+Here we describe a methodology for assimilating observational data and improving
+available bathymetry survay based on availble grided and point observations of
+wave and current parameters in an tidal inlet.
+The method consists of below mentioned steps:
+
+
+\begin{enumerate}
+  \item Generating a set of \textit{N} ensemble bathymetry members based on
+  perior knowledeg and related uncertainities.
+  \item Apply modeling system (hydrodynamic and wave model) to each of
+  the ensemble members.
+  \item Compute the mean and covariance matrices from modeled members.
+  \item 
+   
+  \item 
+    
+\item 
+\end{enumerate}
+
+assume:
+\begin{align}
+h=h^t+p
+\end{align}
+
+where $h^t$ is the true bathymetry. $p$ is its associated error. The resulted
+prediction $v$ is:
+
+\begin{align}
+v=G \left( h^t+p \right )=v^t+q.
+\end{align}
+
+The goal is to reach to an optimal estimate of the true state on the model grid,
+$v^t=G\left( h^t \right )$, taking into acount availble obseravations as:
+\begin{align}
+d=L \, v^t+ \varepsilon.
+\end{align}
+where $\varepsilon$ is the observation error and $L$ is a measurments
+operator.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conclusion}
+
+
+
+
+\begin{acknowledgements}
+The author would like to acknowledge\\
+\end{acknowledgements}
+
+
+\bibliographystyle{spbasic}
+\bibliography{References_all}
+
+\end{document}
+

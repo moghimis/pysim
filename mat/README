@@ -1,0 +1,69 @@
+
+Here are some scripts that I use for EnKF
+
+--------------------------------------------------------
+randomField/:
+
+This is a matlab port of a Fortran code by Gier Evensen (inventor of
+EnKF) for generating random noise with specified length scales.  The
+script 'generate2Dp.m' generates 2D noise using the parallel toolbox:
+
+>> matlabpool
+>> generate2Dp(nx,ny,dx,dy,Lx,Ly,Lz,N);
+
+The method assumes a regular grid (constant grid spacings dx,dy).  It
+would be hard to adapt the code for nonuniform grid spacing, because
+it relies on Fourier transforms...
+
+Lx and Ly are the perturbation length scales, and Lz is the
+perturbation amplitudes (standard deviation).  N is the number of
+realizations to generate (e.g. use N=200).
+
+--------------------------------------------------------
+execRuns.sh:
+
+This is what I would do for generating the model runs.  Generates a
+bunch of model directories, then farms them out to the servers using
+ssh.
+
+First the script generates N=200 model run directories, and links a
+template parameter file and a specific bathymetry file.  Then, it
+farms out the jobs to a preassigned list of servers.  There is a bit
+of tricky stuff to get the jobs farmed out, considering there might be
+fewer available servers than the number of jobs to do...  this can
+probably be improved.
+
+--------------------------------------------------------
+assimilate/assimilate.m:
+
+This is what I would do for assimilating data... some notes...
+
+- some of the code relies on my standardized directory structure for
+Duck, you will probably do things differently
+
+- I assume the observations are contained in a struct called 'meas',
+which has fields representing different observation types.  For your
+case, you can probably simplify this
+
+- then, I interpolate the model outputs to the measurements, which I
+add as a new field, meas.model.  This is used in the update step.
+
+- I do some tricky stuff (lines 347-459) for representing the
+observation covariance matrix 'D' (called 'Cdd' in the script).  For
+your case, I recommend assuming Cdd is just a diagonal matrix instead,
+for now.
+
+- the code includes something called "covariance localization", which
+means the sample covariance is truncated at a specified length scale.
+This is a technique used to avoid approximation errors due to finite
+ensemble size.  See calls to 'omega_vec.m'.
+
+- in order for the posterior ensemble to have the correct spread, you
+need to add random noise to the observations.  This is something I
+forgot to mention this morning, but is well known; can be shown by
+writing out the expression for the sample covariance of the posterior
+ensemble.  I generate the noise at the same time as constructing the
+observation error covariance (Cdd), and it's called 'meas.noise'.  If
+you choose to use a diagnoal Cdd, then you could just define
+
+>> meas.noise = randn(size(meas.model));

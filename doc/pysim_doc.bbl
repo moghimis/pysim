@@ -1,0 +1,17 @@
+\begin{thebibliography}{1}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{Moghimi et~al(2014)Moghimi, Ozkan-Haller, Wilson, and
+  Kurapov}]{moghimi2015assim_syn}
+Moghimi S, Ozkan-Haller HT, Wilson G, Kurapov A (2014) Data assimilation for
+  bathymetry estimation at a tidal inlet. Journal of Atmospheric and Oceanic
+  Technology p In Review
+
+\end{thebibliography}

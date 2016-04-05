@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage[dvips]{graphicx}
+
+\begin{document}
+
+Goal is to generate pseudo-random 2D fields having zero mean and
+specified covariance.  This follows Evensen (1994) Appendix.  I won't
+go through their derivation here, instead I will just concentrate on
+the implementation in Matlab.
+
+\section{1D Formulation}
+
+I will work in 1D here, then extend to 2D later.
+
+Using Evensen's notation, note the Matlab Inverse Fourier Transform
+function ``ifft'' computes
+\begin{equation}
+  q_m = \frac{1}{M}\sum_{p=0}^{M-1}
+  \hat{q}_p e^{-i\left(\lambda_p y_m\right)}
+\end{equation}
+where
+\begin{eqnarray}
+  y_n = n\Delta y,\\
+  \lambda_p = \frac{2\pi p}{M\Delta y}.
+\end{eqnarray}
+This differs from the convention of Evensen, by a factor of
+\begin{equation}
+  \Delta\lambda = \frac{2\pi}{M\Delta y}.
+\end{equation}
+So computing the inverse transform (equation (A2)) can be done by
+multiplying the output of ``ifft'' by $\Delta\lambda$.
+
+Another difference is that Matlab indexes from zero frequency, which
+can be confusing when it comes time to apply the Hermetian symmetry
+condition (required to ensure real-valued output).  To simplify
+things, I will assume an even record length, then apply
+\begin{eqnarray}
+  \hat{q}_1=0,\\
+  \hat{q}_{M/2+1}=0,\\
+  \hat{q}_m = \hat{q}_{\textrm{mod}(M-m+1,M)+1}
+\end{eqnarray}
+The last condition is applied for $m=2\dots M/2$.
+
+\end{document}
