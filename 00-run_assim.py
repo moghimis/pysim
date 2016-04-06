@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Main script for doing assimilation ####
+Main script for doing assimilation WITH EXTRA TEXT  ####
 """
 __author__    = "Saeed Moghimi"
 __copyright__ = "Copyright 2015, Oregon State University"
