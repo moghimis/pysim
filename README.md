@@ -7,10 +7,16 @@ Please cite this paper:
 
 
 @article{moghimi2016data,
+
   title={Data Assimilation for Bathymetry Estimation at a Tidal Inlet},
+  
   author={Moghimi, S and Ozkan-Haller, HT and Wilson, GW and Kurapov, A},
+  
   journal={Journal of Atmospheric and Oceanic Technology},
+  
   number={2016},
+  
   year={2016}
+  
 }
 
